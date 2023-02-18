@@ -10,6 +10,9 @@ packages = [{include = "dz_mod4"}]
 python = "^3.11"
 
 
+[tool.poetry.group.dev.dependencies]
+coverage = "^7.1.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
