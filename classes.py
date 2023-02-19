@@ -17,3 +17,9 @@ class Stack:
         """Помещает в стек данные в виде узла Node"""
         new_node = Node(data, self.top)
         self.top = new_node
+
+    def pop(self):
+        """Удаляет из стека верхний узел Node и возвращает его данные"""
+        del_node = self.top
+        self.top = self.top.next_node
+        return del_node.data
