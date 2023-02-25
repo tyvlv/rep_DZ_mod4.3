@@ -1,25 +1,18 @@
 from classes import Node, Stack
+from custom_queue import Queue
 
 
 def main():
-    stack = Stack()
-    stack.push('data1')
-    data = stack.pop()
+    queue = Queue()
+    queue.enqueue('data1')
+    queue.enqueue('data2')
+    queue.enqueue('data3')
 
-    # стек стал пустой
-    print(stack.top)
-    # pop() удаляет элемент и возвращает данные удаленного элемента
-    print(data)
-    stack = Stack()
-    stack.push('data1')
-    stack.push('data2')
-    data = stack.pop()
-
-    # теперь последний элемента содержит данные data1
-    print(stack.top.data)
-
-    # данные удаленного элемента
-    print(data)
+    print(queue.head.data)
+    print(queue.head.next_node.data)
+    print(queue.tail.data)
+    print(queue.tail.next_node)
+    print(queue.tail.next_node.data)
 
 
 if __name__ == '__main__':

@@ -1,6 +1,7 @@
 import unittest
 
 from classes import Node, Stack
+from custom_queue import Queue
 
 
 class TestNode(unittest.TestCase):
@@ -36,3 +37,18 @@ class TestStack(unittest.TestCase):
         assert self.stack.top.data == 'data2'
         assert self.stack.top.next_node.data == 'data1'
         assert self.stack.top.next_node.next_node is None
+
+
+class TestQueue(unittest.TestCase):
+    """Тест класса Queue"""
+    def setUp(self) -> None:
+        self.queue = Queue()
+        self.queue.enqueue('data1')
+        self.queue.enqueue('data2')
+        self.queue.enqueue('data3')
+
+    def test_queue_enqueue(self):
+        assert self.queue.head.data == 'data1'
+        assert self.queue.head.next_node.data == 'data2'
+        assert self.queue.tail.data == 'data3'
+        assert self.queue.tail.next_node is None
