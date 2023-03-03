@@ -8,11 +8,15 @@ def main():
     queue.enqueue('data2')
     queue.enqueue('data3')
 
-    print(queue.head.data)
-    print(queue.head.next_node.data)
-    print(queue.tail.data)
-    print(queue.tail.next_node)
-    print(queue.tail.next_node.data)
+    # print(queue.head.data)
+    # print(queue.head.next_node.data)
+    # print(queue.tail.data)
+    # print(queue.tail.next_node)
+    # print(queue.tail.next_node.data)
+    print(queue.dequeue())
+    print(queue.dequeue())
+    print(queue.dequeue())
+    print(queue.dequeue())
 
 
 if __name__ == '__main__':

@@ -41,6 +41,7 @@ class TestStack(unittest.TestCase):
 
 class TestQueue(unittest.TestCase):
     """Тест класса Queue"""
+
     def setUp(self) -> None:
         self.queue = Queue()
         self.queue.enqueue('data1')
@@ -52,3 +53,11 @@ class TestQueue(unittest.TestCase):
         assert self.queue.head.next_node.data == 'data2'
         assert self.queue.tail.data == 'data3'
         assert self.queue.tail.next_node is None
+
+    def test_queue_dequeue(self):
+        data = self.queue.dequeue()
+        assert data == 'data1'
+        assert self.queue.head.data == 'data2'
+        assert self.queue.head.next_node.data == 'data3'
+        assert self.queue.head.next_node.next_node is None
+        assert self.queue.tail.data == 'data3'

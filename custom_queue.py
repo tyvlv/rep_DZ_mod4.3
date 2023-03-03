@@ -17,3 +17,11 @@ class Queue:
         else:
             self.tail.next_node = new_node
         self.tail = new_node
+
+    def dequeue(self):
+        """Удаляет из очереди первый добавленный узел Node и возвращает его данные"""
+        if self.head is None:
+            return None
+        del_node = self.head
+        self.head = self.head.next_node
+        return del_node.data
