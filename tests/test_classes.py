@@ -82,3 +82,13 @@ class TestLinkedList(unittest.TestCase):
     def test_linked_list_insert_at_end(self):
         assert self.ll.tail.data == {'id': 3}
         assert self.ll.tail.next_node is None
+
+    def test_print_ll(self):
+        assert self.ll.print_ll() == print("{'id': 0} -> {'id': 1} -> {'id': 2} -> {'id': 3} -> None")
+
+    def test_linked_to_list(self):
+        assert self.ll.to_list() == [{'id': 0}, {'id': 1}, {'id': 2}, {'id': 3}]
+
+    def test_get_data_by_id(self):
+        assert self.ll.get_data_by_id(1) == {'id': 1}
+        assert self.ll.get_data_by_id(5) == "Словарь с 'id'=5 отсутствует"
